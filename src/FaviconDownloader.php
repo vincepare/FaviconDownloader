@@ -115,8 +115,8 @@ class FaviconDownloader
         }
         
         // HTML <link> icon tag analysis
-        if (preg_match('#<\s*link[^>]*(rel=(["\'])[^>\2]*icon[^>\2]*\2)[^>]*>#i', $htmlHead, $matches)) {
-            $link_tag = $matches[0];
+        if (preg_match_all('#<\s*link[^>]*(rel=(["\'])[^>\2]*icon[^>\2]*\2)[^>]*>#i', $htmlHead, $matches)) {
+            $link_tag = end($matches[0]);
             $this->debugInfo['link_tag'] = $link_tag;
             
             // HTML <link> icon tag href analysis
