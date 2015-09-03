@@ -101,6 +101,7 @@ class FaviconDownloader
         
         // Default favicon URL
         $this->icoUrl = $this->siteUrl.'favicon.ico';
+        $this->icoType = 'ico';
         $this->findMethod = 'default';
         
         // HTML <head> tag extraction
