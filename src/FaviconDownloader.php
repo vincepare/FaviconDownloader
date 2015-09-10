@@ -116,8 +116,8 @@ class FaviconDownloader
         }
         
         // HTML <link> icon tag analysis
-        // @see http://stackoverflow.com/a/171499/209184
-        if (preg_match_all('#<\\s*link[^>]*(rel=(["\'])(\\\\?.)*?icon*?\\2)[^>]*>#i', $htmlHead, $matches)) {
+        // @see https://github.com/gokercebeci/geticon/blob/master/class.geticon.php#L66
+        if (preg_match_all('#<([^>]*)link([^>]*)rel\=("|\')?(icon|shortcut icon)("|\')?([^>]*)>#iU', $htmlHead, $matches)) {
             $link_tag = end($matches[0]);
             $this->debugInfo['link_tag'] = $link_tag;
             
